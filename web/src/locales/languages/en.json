@@ -60,7 +60,12 @@
     "addCondition": "Add Condition",
     "required": "Value is required",
     "valueMustBeGreaterThanZero": "Value must be greater than zero",
-    "links": "Links"
+    "links": "Links",
+    "vertical": "Vertical",
+    "horizontal": "Horizontal",
+    "custom": "Custom",
+    "none": "None",
+    "auto": "Auto"
   },
   "search": {
     "selectIndex": "Select Stream First",
@@ -683,7 +688,9 @@
     "smooth": "Smooth",
     "stepBefore": "Step Before",
     "stepAfter": "Step After",
-    "stepMiddle": "Step Middle"
+    "stepMiddle": "Step Middle",
+    "trellisLayout": "Trellis Layout",
+    "numOfColumns": "Number of Columns per Row"
   },
   "panel": {
     "header": "Panel",
