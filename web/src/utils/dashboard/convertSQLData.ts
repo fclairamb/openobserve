@@ -732,13 +732,13 @@ export const convertSQLData = async (
 
     let customCols = -1;
     if (
-      panelSchema.config.enable_trellis_chart === "custom" &&
-      panelSchema.config.num_of_columns
+      panelSchema.config.trellis?.layout === "custom" &&
+      panelSchema.config.trellis?.num_of_columns
     ) {
-      customCols = panelSchema.config.num_of_columns;
+      customCols = panelSchema.config.trellis?.num_of_columns;
     }
 
-    if (panelSchema.config.enable_trellis_chart === "vertical") {
+    if (panelSchema.config.trellis?.layout === "vertical") {
       customCols = 1;
     }
 
@@ -1448,7 +1448,7 @@ export const convertSQLData = async (
         });
       }
 
-      if (panelSchema.config.enable_trellis_chart) {
+      if (panelSchema.config.trellis?.layout) {
         updateTrellisChartOptions();
       }
 
@@ -1499,14 +1499,14 @@ export const convertSQLData = async (
           20 * (xAxisKeys.length + breakDownKeys.length - index);
       });
 
-      if (panelSchema.config.enable_trellis_chart) {
+      if (panelSchema.config.trellis?.layout) {
         updateTrellisChartOptions();
       }
 
       break;
     }
     case "h-bar": {
-      if (panelSchema.config.enable_trellis_chart) {
+      if (panelSchema.config.trellis?.layout) {
         updateTrellisChartOptions();
         const temp = options.xAxis;
         options.xAxis = options.yAxis;
@@ -1589,7 +1589,7 @@ export const convertSQLData = async (
       break;
     }
     case "pie": {
-      // if (panelSchema.config.enable_trellis_chart) {
+      // if (panelSchema.config.trellis?.layout) {
       //   updateTrellisForPieTypeChart();
       //   options.xAxis = [];
       //   options.yAxis = [];
@@ -1816,7 +1816,7 @@ export const convertSQLData = async (
         };
         return seriesObj;
       });
-      if (panelSchema.config.enable_trellis_chart) {
+      if (panelSchema.config.trellis?.layout) {
         updateTrellisChartOptions();
       }
       break;
@@ -1994,7 +1994,7 @@ export const convertSQLData = async (
       break;
     }
     case "h-stacked": {
-      if (panelSchema.config.enable_trellis_chart) {
+      if (panelSchema.config.trellis?.layout) {
         updateTrellisChartOptions();
         const temp = options.xAxis;
         options.xAxis = options.yAxis;

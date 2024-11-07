@@ -243,6 +243,8 @@ pub struct PanelConfig {
     mappings: Option<Vec<Mapping>>,
     #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<ColorCfg>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    trellis: Option<Trellis>,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ToSchema)]
@@ -472,6 +474,12 @@ pub struct MapView {
     pub zoom: f64,
     pub lat: f64,
     pub lng: f64,
+}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ToSchema)]
+pub struct Trellis {
+    pub layout: String,
+    pub num_of_columns: i64,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ToSchema)]
