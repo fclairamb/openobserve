@@ -911,7 +911,6 @@ export default defineComponent({
       if (!isValid()) {
         return;
       }
-      console.log(JSON.parse(JSON.stringify(dashboardPanelData.data)));
 
       try {
         // console.time("savePanelChangesToDashboard");
